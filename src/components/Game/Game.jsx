@@ -30,7 +30,7 @@ const Game = ({addScore, mode}) => {
             setWinner("draw");
         }else if(user.beat.includes(house.name)) {
             setWinner("user");
-            addScore();
+            setTimeout(() =>addScore(), 2000);
         }else if(user.beat !== house.name){
             setWinner("house");
         }
@@ -40,9 +40,7 @@ const Game = ({addScore, mode}) => {
         const user = options.find(option => option.name === selectedOption);
         const randomNumber = Math.round(Math.random() * options.length);
         const house = options[randomNumber];
-        console.log(randomNumber);
 
-        console.log(user, house)
         setUserOption(user);
         setHouseOption(house);
         setWinnerOption(user, house);

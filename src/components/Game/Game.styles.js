@@ -181,4 +181,9 @@ export const ResultMessageButton = styled.button`
   width: 100%;
   height: 50px;
   cursor: pointer;
+  
+  &:focus{
+    outline: 3px dashed ${({theme}) => theme.elementColor};
+    outline-offset: 5px;
+  }
 `;
