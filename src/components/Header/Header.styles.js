@@ -28,6 +28,6 @@ export const StyledImage = styled.img`
   height: min-content;
 
   @media screen and (min-width: 768px) {
-    width: 160px;
+    width: ${({gameMode}) => gameMode === "original" ? "160px" : "110px"};
   }
 `

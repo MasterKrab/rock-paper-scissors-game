@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ButtonsContainer, Button }from "./Buttons.styles";
 import Modal from "../Modal/Modal";
 
-const Buttons = ({mode, handleMode}) => {
+const Buttons = ({gameMode, handleMode}) => {
     const [openModal, setOpenModal] = useState(false);
 
     const handleOpenModal = () => setOpenModal(true);
@@ -13,13 +13,13 @@ const Buttons = ({mode, handleMode}) => {
         <ButtonsContainer>
             <Button onClick={handleMode}>
                 {
-                    mode === "original"
+                    gameMode === "original"
                         ? "bonus"
                         : "original"
                 }
             </Button>
             <Button onClick={handleOpenModal}>Rules</Button>
-            <Modal openModal={openModal} handleCloseModal={handleCloseModal} mode={mode}/>
+            <Modal openModal={openModal} handleCloseModal={handleCloseModal} gameMode={gameMode}/>
         </ButtonsContainer>
     )
 };

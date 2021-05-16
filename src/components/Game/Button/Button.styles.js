@@ -54,9 +54,9 @@ export const StyledButton = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    width: ${({mode}) => mode === "original" ? "200px" : "150px"};
-    height: ${({mode}) => mode === "original" ? "200px" : "150px"};
-    padding: ${({mode}) => mode === "original" ? "23px" : "17px"};
+    width: ${({gameMode}) => gameMode === "original" ? "200px" : "150px"};
+    height: ${({gameMode}) => gameMode === "original" ? "200px" : "150px"};
+    padding: ${({gameMode}) => gameMode === "original" ? "23px" : "17px"};
     transition: transform 0.2s;
     top: ${({top}) => top.desktop};
     left: ${({left}) => left.desktop};
@@ -66,7 +66,7 @@ export const StyledButton = styled.button`
     }
     
     & img{
-      width: ${({mode}) => mode === "original" ? "65px" : "50px"};
+      width: ${({gameMode}) => gameMode === "original" ? "65px" : "50px"};
     }
   }
   

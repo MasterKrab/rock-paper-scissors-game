@@ -19,8 +19,8 @@ import {
 } from "./Game.styles";
 
 
-const Game = ({addScore, mode}) => {
-    const options = mode === "original" ? original : bonus;
+const Game = ({addScore, gameMode}) => {
+    const options = gameMode === "original" ? original : bonus;
     const [userOption, setUserOption] = useState({});
     const [houseOption, setHouseOption] = useState({});
     const [winner, setWinner] = useState("");
@@ -53,7 +53,10 @@ const Game = ({addScore, mode}) => {
 
     return (
         !userOption.name ? (
-            <ButtonsContainer svg={mode === "bonus" ? PentagonSvg : TriangleSvg} mode={mode}>
+            <ButtonsContainer
+                svg={gameMode === "bonus" ? PentagonSvg : TriangleSvg}
+                gameMode={gameMode}
+            >
                 {
                     options.map(({name, svg, gridArea, top, left}) => (
                         <Button
@@ -62,7 +65,7 @@ const Game = ({addScore, mode}) => {
                             gridArea={gridArea}
                             handleClick={handleClick}
                             key={id()}
-                            mode={mode}
+                            gameMode={gameMode}
                             top={top}
                             left={left}
                         />

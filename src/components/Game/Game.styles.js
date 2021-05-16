@@ -21,10 +21,10 @@ const opacity = keyframes`
 
 export const ButtonsContainer = styled.div`
   display: grid;
-  grid-template-columns: ${({mode}) => mode === "bonus" ? "repeat(4, min-content)" : "repeat(3, min-content)"};
-  grid-template-rows: ${({mode}) => mode === "bonus" ? "repeat(3, min-content)" : "repeat(2, min-content)"};
+  grid-template-columns: ${({gameMode}) => gameMode === "bonus" ? "repeat(4, min-content)" : "repeat(3, min-content)"};
+  grid-template-rows: ${({gameMode}) => gameMode === "bonus" ? "repeat(3, min-content)" : "repeat(2, min-content)"};
   justify-content: center;
-  row-gap: ${({mode}) => mode === "bonus" ? "0" : "50px"};
+  row-gap: ${({gameMode}) => gameMode === "bonus" ? "0" : "50px"};
   background-image: ${({svg}) => `url(${svg})`};
   background-repeat: no-repeat;
   background-position: center 50px;

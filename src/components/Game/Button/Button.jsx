@@ -1,7 +1,7 @@
 import React from "react";
 import {ButtonSpan, StyledButton} from "./Button.styles";
 
-const Button = ({option, image, gridArea, handleClick, disabled, win, mode, top, left}) => (
+const Button = ({option, image, gridArea, handleClick, disabled, win, gameMode, top, left}) => (
     <StyledButton
         aria-label={option}
         option={option}
@@ -9,7 +9,7 @@ const Button = ({option, image, gridArea, handleClick, disabled, win, mode, top,
         onClick={() => handleClick(option)}
         disabled={disabled}
         win={win}
-        mode={mode}
+        gameMode={gameMode}
         top={top}
         left={left}
     >

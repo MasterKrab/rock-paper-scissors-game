@@ -52,16 +52,16 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const App = (key, value) => {
+const App = () => {
     const [score, setScore] = useState(
         parseInt(localStorage.getItem("score")) || 12
     );
-    const [mode, setMode] = useState("original");
+    const [gameMode, setGameMode] = useState("original");
 
     const handleMode = () => {
-        mode === "original"
-            ? setMode("bonus")
-            : setMode("original");
+        gameMode === "original"
+            ? setGameMode("bonus")
+            : setGameMode("original");
     };
 
     const addScore = () => {
@@ -73,12 +73,12 @@ const App = (key, value) => {
         <ThemeProvider theme={colors}>
             <Normalize />
             <GlobalStyles />
-            <Header score={score}/>
+            <Header score={score} gameMode={gameMode}/>
             <main>
-                <Game addScore={addScore} mode={mode}/>
+                <Game addScore={addScore} gameMode={gameMode}/>
             </main>
                 <Buttons
-                    mode={mode}
+                    gameMode={gameMode}
                     handleMode={handleMode}
                 />
         </ThemeProvider>
