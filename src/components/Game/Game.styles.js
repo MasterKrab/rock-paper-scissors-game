@@ -52,6 +52,7 @@ export const ResultContainer = styled.div`
   justify-content: center;
   justify-items: center;
   align-items: center;
+  column-gap: 80px;
   row-gap: 80px;
   margin-top: 60px;
   max-width: 950px;
@@ -65,10 +66,12 @@ export const ResultContainer = styled.div`
   }
 
   @media screen and (min-width: 420px) {
+    column-gap: 50px;
     transform: scale(1);
   }
   
   @media screen and (min-width: 1024px) {
+    column-gap: 0;
     grid-template-columns: 1fr 350px 1fr;
     height: 400px;
   }

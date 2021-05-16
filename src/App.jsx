@@ -48,7 +48,7 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    height: 800px;
+    height: 850px;
   }
 `;
 

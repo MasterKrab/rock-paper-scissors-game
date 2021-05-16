@@ -21,8 +21,8 @@ import {
 
 const Game = ({addScore, mode}) => {
     const options = mode === "original" ? original : bonus;
-    const [userOption, setUserOption] = useState("");
-    const [houseOption, setHouseOption] = useState("");
+    const [userOption, setUserOption] = useState({});
+    const [houseOption, setHouseOption] = useState({});
     const [winner, setWinner] = useState("");
 
     const setWinnerOption = (user, house) => {
@@ -30,7 +30,7 @@ const Game = ({addScore, mode}) => {
             setWinner("draw");
         }else if(user.beat.includes(house.name)) {
             setWinner("user");
-            setTimeout(() =>addScore(), 2000);
+            setTimeout(() => addScore(), 2000);
         }else if(user.beat !== house.name){
             setWinner("house");
         }
@@ -38,7 +38,7 @@ const Game = ({addScore, mode}) => {
 
     const handleClick = (selectedOption) => {
         const user = options.find(option => option.name === selectedOption);
-        const randomNumber = Math.round(Math.random() * options.length);
+        const randomNumber = Math.round(Math.random() * (options.length - 1));
         const house = options[randomNumber];
 
         setUserOption(user);
@@ -47,12 +47,12 @@ const Game = ({addScore, mode}) => {
     };
 
     const handleReset = () => {
-        setUserOption("");
-        setHouseOption("");
+        setUserOption({});
+        setHouseOption({});
     };
 
     return (
-        userOption.length === 0 ? (
+        !userOption.name ? (
             <ButtonsContainer svg={mode === "bonus" ? PentagonSvg : TriangleSvg} mode={mode}>
                 {
                     options.map(({name, svg, gridArea, top, left}) => (
@@ -69,7 +69,7 @@ const Game = ({addScore, mode}) => {
                     ))
                 }
             </ButtonsContainer>
-        ) : ( (winner.length > 0 || houseOption.length > 0 || userOption.length > 0) && (
+        ) : ( (winner.length > 0 || houseOption.name || userOption.name ) && (
             <ResultContainer>
                 <ResultOption>
                     <ResultTitle>You picked</ResultTitle>
