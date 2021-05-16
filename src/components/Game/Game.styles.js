@@ -41,7 +41,7 @@ export const ButtonsContainer = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    margin-top: ${({mode}) => mode === "original" ? "100px" : "60px"};
+    margin-top: ${({gameMode}) => gameMode === "original" ? "100px" : "60px"};
     background-position-y: background-position: ${({mode}) => mode === "original" ? "100px" : "center"};
   }
 `;
