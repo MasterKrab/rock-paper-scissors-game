@@ -90,7 +90,7 @@ const Game = ({addScore, gameMode}) => {
                     <ResultMessageText>
                         {
                             winner === "draw"
-                                ? "¡Draw!"
+                                ? "It's a tie"
                                 : winner === "user"
                                     ? "You Win"
                                     : "You Lose"

@@ -4,7 +4,7 @@ import { ScoreName, ScoreNumber, StyledScore } from "./Score.styles";
 const Score = ({score}) => (
     <StyledScore>
         <ScoreName>Score</ScoreName>
-        <ScoreNumber>{score}</ScoreNumber>
+        <ScoreNumber aria-live="polite">{score}</ScoreNumber>
     </StyledScore>
 );
 

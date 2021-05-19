@@ -65,7 +65,7 @@ export const CloseButton = styled.button`
   height: 20px;
   cursor: pointer;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1023px) {
     position: absolute;
     bottom: 65px;
     left: 50%;
