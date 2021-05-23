@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Dialog = styled.dialog`
+export const Dialog = styled.div`
+  visibility: ${({openModal}) => openModal ? "visible" : "hidden"};
+  opacity: ${({openModal}) => openModal ? "1" : "0"};
   position: fixed;
   top: 0;
   left: 0;
@@ -10,6 +12,7 @@ export const Dialog = styled.dialog`
   padding: 0;
   width: 100vw;
   height: 100vh;
+  transition: opacity 0.2s, visibility 0.2s;
 `;
 
 export const ModalContainer = styled.section`

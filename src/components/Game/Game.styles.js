@@ -60,6 +60,7 @@ export const ResultContainer = styled.div`
   margin-right: auto;
   transform: scale(0.7);
   transition: transform 0.2s;
+  animation: ${opacity} 0.2s;
 
   @media screen and (min-width: 350px) {
     transform: scale(0.8);

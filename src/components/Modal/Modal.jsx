@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
     Dialog,
     ModalContainer,
@@ -12,7 +12,7 @@ import RulesBonusSvg from "../../assets/images/image-rules-bonus.svg";
 import CloseSvg from "../../assets/images/icon-close.svg";
 
 const Modal = ({openModal, handleCloseModal, gameMode}) => (
-    <Dialog open={openModal}>
+    <Dialog openModal={openModal} open={openModal} role="dialog">
         <ModalContainer>
             <ModalTop>
                 <Title>Rules</Title>

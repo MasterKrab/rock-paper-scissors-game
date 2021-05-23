@@ -48,13 +48,21 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    height: 850px;
+    height: 720px;
+
+    @media screen and (min-width: 768px){
+      height: 900px;
+    }
+
+    @media screen and (min-width: 1024px){
+      height: 800px;
+    }
   }
 `;
 
 const App = () => {
     const [score, setScore] = useState(
-        parseInt(localStorage.getItem("score")) || 12
+        parseInt(localStorage.getItem("score")) || 0
     );
     const [gameMode, setGameMode] = useState("original");
 
