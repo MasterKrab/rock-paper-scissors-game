@@ -31,6 +31,7 @@ export const ButtonsContainer = styled.div`
   margin-top: 100px;
   transform: scale(0.7);
   transition: transform 0.2s;
+  animation: ${opacity} 0.1s;
   
   @media screen and (min-width: 350px) {
     transform: scale(0.8);

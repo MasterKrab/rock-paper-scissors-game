@@ -12,7 +12,7 @@ export const Dialog = styled.div`
   padding: 0;
   width: 100vw;
   height: 100vh;
-  transition: opacity 0.2s, visibility 0.2s;
+  transition: opacity 0.3s, visibility 0.3s;
 `;
 
 export const ModalContainer = styled.section`
