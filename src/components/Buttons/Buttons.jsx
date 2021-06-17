@@ -19,7 +19,10 @@ const Buttons = ({gameMode, handleMode}) => {
                 }
             </Button>
             <Button onClick={handleOpenModal}>Rules</Button>
-            <Modal openModal={openModal} handleCloseModal={handleCloseModal} gameMode={gameMode}/>
+            {
+                openModal && <Modal openModal={openModal} handleCloseModal={handleCloseModal} gameMode={gameMode}/>
+            }
+
         </ButtonsContainer>
     )
 };

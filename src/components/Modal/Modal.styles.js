@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Dialog = styled.div`
-  visibility: ${({openModal}) => openModal ? "visible" : "hidden"};
-  opacity: ${({openModal}) => openModal ? "1" : "0"};
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +10,6 @@ export const Dialog = styled.div`
   padding: 0;
   width: 100vw;
   height: 100vh;
-  transition: opacity 0.3s, visibility 0.3s;
 `;
 
 export const ModalContainer = styled.section`
@@ -24,7 +21,7 @@ export const ModalContainer = styled.section`
   padding-top: 85px;
   padding-bottom: 100px;
   height: 100%;
-
+  
   @media screen and (min-width: 1024px) {
     position: absolute;
     top: 50%;
@@ -33,6 +30,7 @@ export const ModalContainer = styled.section`
     border-radius: 15px;
     padding: 15px 33px 45px;
     width: 400px;
+    min-height: 395px;
     height: max-content;
   }
 `;

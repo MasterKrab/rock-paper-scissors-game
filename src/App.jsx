@@ -62,7 +62,7 @@ const GlobalStyles = createGlobalStyle`
 
 const App = () => {
     const [score, setScore] = useState(
-        parseInt(localStorage.getItem("score")) || 0
+        JSON.parse(localStorage.getItem("score")) || 0
     );
     const [gameMode, setGameMode] = useState("original");
 
@@ -73,8 +73,9 @@ const App = () => {
     };
 
     const addScore = () => {
-        setScore(score + 1);
-        localStorage.setItem("score", score);
+        const updatedScore = score + 1;
+        setScore(updatedScore);
+        localStorage.setItem("score", JSON.stringify(updatedScore));
     };
 
     return(

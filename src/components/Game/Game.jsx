@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { nanoid as id } from "nanoid";
 import Button from "./Button/Button";
 import { original, bonus } from "./Mode";
-import TriangleSvg from "../../assets/images/bg-triangle.svg";
-import PentagonSvg from "../../assets/images/bg-pentagon.svg"
 
 import {
     ButtonsContainer,
@@ -20,7 +18,7 @@ import {
 
 
 const Game = ({addScore, gameMode}) => {
-    const options = gameMode === "original" ? original : bonus;
+    const gameModeData = gameMode === "original" ? original : bonus;
     const [userOption, setUserOption] = useState({});
     const [houseOption, setHouseOption] = useState({});
     const [winner, setWinner] = useState("");
@@ -37,6 +35,7 @@ const Game = ({addScore, gameMode}) => {
     };
 
     const handleClick = (selectedOption) => {
+        const {options} = gameModeData;
         const user = options.find(option => option.name === selectedOption);
         const randomNumber = Math.round(Math.random() * (options.length - 1));
         const house = options[randomNumber];
@@ -54,11 +53,11 @@ const Game = ({addScore, gameMode}) => {
     return (
         !userOption.name ? (
             <ButtonsContainer
-                svg={gameMode === "bonus" ? PentagonSvg : TriangleSvg}
+                svg={gameModeData.background}
                 gameMode={gameMode}
             >
                 {
-                    options.map(({name, svg, gridArea, top, left}) => (
+                    gameModeData.options.map(({name, svg, gridArea, top, left}) => (
                         <Button
                             option={name}
                             image={svg}
@@ -72,7 +71,7 @@ const Game = ({addScore, gameMode}) => {
                     ))
                 }
             </ButtonsContainer>
-        ) : ( (winner.length > 0 || houseOption.name || userOption.name ) && (
+        ) : (
             <ResultContainer>
                 <ResultOption>
                     <ResultTitle>You picked</ResultTitle>
@@ -117,9 +116,8 @@ const Game = ({addScore, gameMode}) => {
                         </ResultOptionFront>
                     </ResultOptionFlip>
                 </ResultOption>
-
             </ResultContainer>
-        ))
+        )
     )
 };
 
